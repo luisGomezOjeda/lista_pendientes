@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;700&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+ <title>pendientes</title>
+ <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+ <main class = "main">
+  <section class ="section-img"></section>
+
+  <section class = "section-list">
+   <div class ="list-header">
+    <h1 class ="list-title">TODO</h1>
+    <input type="checkbox" class ="list-theme__color" id="theme-button"><label for="theme-button"></label>
+   </div>
+   <ul class="list-ul">
+    <ul class = "ul-create-ul">
+     <li class = "ul__create-ul-li"><button></button><input type="text" id="text--new-todo" placeholder="create a new todo"></li>
+    </ul>
+     <ul class ="list-ul-todo">
+      
+     </ul>
+   </ul>
+   <div class ="settings">
+    <span class ="settings-items__counter">0/0</span>
+    <div class ="settings-status">
+     <input type="checkbox" id="status__all" class ="status__all"><label for="status__all">All</label>
+      <input type="checkbox" id="status__earring" class ="status__earring"><label for="status__earring">Active</label>
+      <input type="checkbox" id="status__completed" class ="status__completed"><label for="status__completed">Completed</label>
+     </div>
+     <button type="button" id="status__reset" class ="status__reset">clear completed</button>
+    </div>
+  </section>
+  <button type="button" id="reset" class ="status__reset reset">clear</button>
+  <section class ="section-bacground"></section>
+  
+  <template id="template--li">
+    <li class="list-ul-todo-li">
+  
+      <input type="checkbox"> <label></label>
+    
+      <p></p>
+    
+      <button class ="button-close">x</button>
+      
+      </li>
+  </template>
+
+ </main>
+ <script src ="./assets/scripts/settings.js"></script>
+ <script src ="./assets/scripts/index.js" type ="module"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+
+html{
+ font-size:62.5%;
+ font-family: 'Edu TAS Beginner', cursive;
+}
+
+body{
+ width: 100%;
+ height: 100vh;
+}
+
+:root{
+ --background : #181824;
+ --background_list : #25273C;
+ --color-list : rgb(230, 230, 230);
+ --color-list-checked : rgb(158, 158, 158);
+ --border-list :rgb(37, 39, 60);
+ --setting-checked : rgb(103, 103, 238);
+}
+
+.main{
+ width: 100%;
+ height: 100%;
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 2fr 3fr;
+ position:relative;
+}
+
+.main .section-img{
+ width: 100%;
+ height: 100%;
+ background-repeat: no-repeat;
+ background-position:center;
+ background-size: cover;
+ transition: 0.8s;
+}
+
+.dark .section-img{
+ background-image:url("../images/bg-desktop-dark.jpg");
+}
+.light .section-img{
+ background-image:url("../images/bg-desktop-light.jpg");
+}
+
+.section-list{
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 10%;
+ width: 35%;
+ height: auto;
+ margin: auto;
+ display:flex;
+ flex-direction: column;
+ justify-content: space-between;
+ transition: 0.5s;
+}
+
+.list-header{
+ display: flex;
+ height: 20%;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 20px;
+}
+
+.list-title{
+ font-size:3rem;
+ font-weight: bold;
+ color: #fff;
+ letter-spacing:8px;
+ font-family: 'Work Sans', sans-serif;
+}
+
+.section-list .list-header input[type="checkbox"]{
+ display: none;
+}
+
+.section-list .list-header input[type="checkbox"] + label{
+ background-image: url("../images/icon-sun.svg"); 
+ width: 25px;
+ height: 25px;
+ background-repeat:no-repeat;
+ background-size: contain;
+ background-position: center;
+}
+
+.section-list .list-header input[type="checkbox"]:checked + label{
+ background-image: url("../images/icon-moon.svg");
+}
+
+.ul-create-ul{
+ width: 100%;
+ height: 80px;
+ display: flex;
+ align-items: center;
+ list-style: none;
+ font-size: 1.6rem;
+ border-bottom: solid 1px rgb(62, 60, 85);
+}
+
+.ul__create-ul-li{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content:start;
+padding: 0 20px;
+}
+.ul__create-ul-li button{
+ display: block;
+ background:none;
+ width: 30px;
+ height: 30px;
+ background-image: url("../images/icons8-más123.svg");
+ background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+ transition: 0.2s;
+}
+
+.ul__create-ul-li button:hover{
+ background-image: url("../images/favicon-32x32.png");
+ transition: 0.2s;
+}
+
+.ul__create-ul-li input[type="text"]{
+ width: 100%;
+ height: 50px;
+ padding: 0 20px;
+ font-size: 1.6rem;
+ letter-spacing:3px;
+ color: rgb(203, 203, 203);
+ background: none;
+ border: none;
+}
+
+.ul__create-ul-li input[type="text"]:active{
+ border: none!important;
+ }
+ 
+ .ul__create-ul-li input[type="text"]:focus{
+ outline-offset: 0px !important;
+ outline: none !important;
+ }
+
+.list-ul{
+ width: 100%;
+ height: auto;
+ max-height: 450px;
+ border-radius:5px;
+ display: flex;
+ flex-direction: column;
+ justify-content:space-evenly;
+}
+
+.list-ul-todo{
+ overflow-y:auto;
+ 
+}
+.list-ul-todo::-webkit-scrollbar{
+ background:none;
+ width: 7px;
+}
+
+.list-ul-todo::-webkit-scrollbar-thumb{
+ background-color: rgba(102, 27, 172, 0.767);
+ border-radius: 15px
+}
+
+
+.list-ul-todo-li{
+ display: flex;
+ width: 100%;
+ min-height: 80px;
+ align-items: center;
+ padding: 0 20px;
+ border-bottom: solid 1px rgb(62, 60, 85);
+}
+
+.list-ul-todo-li input[type="checkbox"]{
+ display: none;
+}
+
+.list-ul-todo-li input[type="checkbox"] + label{
+ width: 30px;
+ height: 30px;
+ border-radius:100%;
+ transition: 0.2s;
+}
+
+.list-ul-todo-li input[type="checkbox"] + label{
+ border: 1.5px solid  rgb(185, 185, 190);
+}
+
+.list-ul-todo-li input[type="checkbox"]:checked + label{
+ background-image: url("../images/icon-check.svg");
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 15px;
+ background-color: rgb(102, 27, 172);
+ transition: 0.2s;
+ border: none;
+}
+
+.list-ul-todo-li input[type="checkbox"]:checked + label + p{
+ text-decoration: line-through;
+ opacity: 0.5;
+ transition: 0.2s;
+}
+
+.list-ul-todo-li p{
+ padding-left: 20px;
+ font-size: 2rem;
+ letter-spacing: 4px;
+ font-weight: 300;
+ max-width: 350px;
+ overflow-x: auto;
+}
+
+.list-ul-todo-li p::-webkit-scrollbar{
+ background:none;
+ width: 15px;
+}
+
+.settings{
+ width: 100%;
+ height: 40px;
+ border-radius:5px;
+ display:grid;
+ grid-template-columns: 1fr 3fr 1.5fr;
+ place-items: center;
+ font-weight: 300;
+}
+
+.settings-status{
+ width: 100%;
+ height: 40px;
+ display:flex;
+ justify-content: space-evenly;
+ align-items: center;
+ font-size:1.4rem;
+ letter-spacing:2px;
+}
+.settings input[type="checkbox"]{
+ display: none;
+}
+
+.settings input[type="checkbox"] + label{
+ align-self: center;
+ font-size:1.4rem;
+ letter-spacing:1.5px;
+ font-family: 'Work Sans', sans-serif;
+ transition: 0.2s;
+}
+
+.settings input[type="checkbox"]:checked + label{
+ font-weight:bolder;
+ transition: 0.2s;
+}
+
+button.button-close{
+ background:none;
+ margin-left:auto;
+ width: 20px;
+ height: 20px;
+ font-size:2.5rem;
+}
+
+button.button-close:hover{
+ transition: 0.2s;
+}
+
+
+.settings-items__counter{
+ font-size:1.6rem;
+ letter-spacing:2px;
+ line-height:40px;
+}
+.status__reset{
+ font-size:1.4rem;
+ letter-spacing:2px;
+ width: 100%;
+ height: auto;
+ background:none;
+}
+
+.status__reset:hover{
+ transition: 0.2s;
+}
+
+.section-bacground{
+ width: 100%;
+ height: 100%;
+ transition: 0.5s;
+}
+
+
+.status__reset.reset{
+ position: absolute;
+ width: 10%;
+ height: 30px;
+ left: 45%;
+ right: 45%;
+ bottom: 7%;
+ border-radius: 0 0 5px 5px;
+}
+/* DARK */
+
+.dark .list-ul, .dark .list-ul,.dark .settings,.dark .status__reset.reset{
+ background-color: var(--background_list);
+}
+
+.dark .list-ul-todo-li,.dark .settings-items__counter,.dark .status__reset,.dark .list-ul-todo-li input[type="checkbox"] + label + p,.dark .status__reset,.dark .settings{
+ color:var(--color-list);
+}
+.settings input[type="checkbox"]:checked + label,.status__reset:hover{
+ color: rgb(97, 158, 255);
+}
+
+.list-ul-todo-li input[type="checkbox"] + label + p + button{
+ display: none;
+ font-size: 3rem;
+ color: rgb(93, 93, 137);
+}
+
+.dark .list-ul-todo-li:hover input[type="checkbox"] + label + p + button{
+ display: block;
+}
+
+.dark .section-bacground{
+ background-color:var(--background);
+}
+
+.dark .settings input[type="checkbox"]:checked + label,
+.light .settings input[type="checkbox"]:checked + label,
+.dark .status__reset:hover,button.button-close:hover,
+.light .settings input[type="checkbox"]:checked + label,
+.dark .status__reset:hover,button.button-close:hover,
+.light .status__reset:hover,button.button-close:hover{
+ color: rgb(73, 146, 255);
+ font-weight:bold;
+}
+
+.dark .section-list .list-ul{
+ box-shadow: 0 150px 65px 5px #11111a;
+}
+/*LIGHT */
+
+.light .list-ul,.light .settings, .list-ul .settings{
+ background-color:rgb(255, 255, 255);
+}
+
+.light .list-ul-todo-li,.light .settings-items__counter,.light .status__reset,.light .settings-status{
+ color: rgb(146, 146, 146);
+}
+
+.light .list-ul-todo-li,.light .ul-create-ul{
+ border-bottom: 1px solid rgb(211, 211, 211) ;
+}
+
+.light button.button-close{
+ color: rgba(204, 204, 204, 0.689);
+}
+
+
+.light .ul__create-ul-li p ,.list-ul-todo-li p{
+ color: rgb(56, 56, 56);
+}
+
+.light .section-bacground{
+ background-color:rgb(241, 241, 241);
+}
+
+.light .section-list .list-ul{
+ box-shadow: 0 150px 60px 5px rgb(235, 235, 235);
+}
+
+
+.light .list-ul-todo-li:hover input[type="checkbox"] + label + p + button{
+ display: block;
+ color: rgb(227, 227, 227);
+}
+
+@media (max-width: 1201px) {
+ .section-list{
+  min-width: 400px;
+ }
+ .dark .section-img{
+  background-image:url("../images/bg-mobile-dark.jpg");
+ }
+
+ .light .section-img{
+  background-image:url("../images/bg-mobile-light.jpg");
+ }
+ .list-ul-todo-li input[type="checkbox"] + label + p + button{
+  display:block;
+ }
+ 
+}
+
+@media (max-width: 401px) {
+ .section-list{
+  min-width: 320px;
+ }
+ .list-ul-todo-li p{
+  font-size: 1.6rem;
+ }
+ .settings input[type="checkbox"] + label, .status__reset{
+  font-size:1rem;
+ }
+}
