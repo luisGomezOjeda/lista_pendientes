@@ -234,8 +234,8 @@ padding: 0 20px;
  width: 100%;
  height: 40px;
  border-radius:5px;
- display:grid;
- grid-template-columns: 1fr 3fr 1.5fr;
+ display:flex;
+ justify-content: space-evenly;
  place-items: center;
  font-weight: 300;
 }
@@ -284,44 +284,34 @@ button.button-close:hover{
  letter-spacing:2px;
  line-height:40px;
 }
-.status__reset{
- font-size:1.4rem;
+
+.settings-reset{
+ width: 100%;
+ height: 40px;
+ display:flex;
+ justify-content: space-evenly;
+ align-items: center;
  letter-spacing:2px;
- width: 100%;
- height: auto;
- background:none;
+ border-radius:5px;
 }
 
-.status__reset:hover{
- transition: 0.2s;
+.status__reset,.reset{
+ font-size:1.4rem;
+  background:none;
+  font-weight: 3;
+  letter-spacing:2px
 }
 
-.section-bacground{
- width: 100%;
- height: 100%;
- transition: 0.5s;
-}
-
-
-.status__reset.reset{
- position: absolute;
- width: 10%;
- height: 30px;
- left: 45%;
- right: 45%;
- bottom: 7%;
- border-radius: 0 0 5px 5px;
-}
 /* DARK */
 
-.dark .list-ul, .dark .list-ul,.dark .settings,.dark .status__reset.reset{
+.dark .list-ul, .dark .list-ul,.dark .settings,.dark .settings-reset{
  background-color: var(--background_list);
 }
 
-.dark .list-ul-todo-li,.dark .settings-items__counter,.dark .status__reset,.dark .list-ul-todo-li input[type="checkbox"] + label + p,.dark .status__reset,.dark .settings{
+.dark .list-ul-todo-li,.dark .settings-items__counter,.dark .status__reset,.dark .list-ul-todo-li input[type="checkbox"] + label + p,.dark .status__reset,.dark .settings,.dark .settings-reset,.dark .reset{
  color:var(--color-list);
 }
-.settings input[type="checkbox"]:checked + label,.status__reset:hover{
+.settings input[type="checkbox"]:checked + label,.status__reset:hover,.reset:hover{
  color: rgb(97, 158, 255);
 }
 
@@ -344,7 +334,7 @@ button.button-close:hover{
 .dark .status__reset:hover,button.button-close:hover,
 .light .settings input[type="checkbox"]:checked + label,
 .dark .status__reset:hover,button.button-close:hover,
-.light .status__reset:hover,button.button-close:hover{
+.light .status__reset:hover,button.button-close:hover,.reset:hover{
  color: rgb(73, 146, 255);
  font-weight:bold;
 }
@@ -354,11 +344,11 @@ button.button-close:hover{
 }
 /*LIGHT */
 
-.light .list-ul,.light .settings, .list-ul .settings{
+.light .list-ul,.light .settings, .list-ul .settings,.light .settings-reset{
  background-color:rgb(255, 255, 255);
 }
 
-.light .list-ul-todo-li,.light .settings-items__counter,.light .status__reset,.light .settings-status{
+.light .list-ul-todo-li,.light .settings-items__counter,.light .status__reset,.light .settings-status,.light .settings-reset,.light .reset{
  color: rgb(146, 146, 146);
 }
 

@@ -1,8 +1,8 @@
 export {list_chores,load_list_chores,create_li,load_todo,create_todo};
 
 
-const list_chores = [];
 
+const list_chores = [];
 
 
 let i = 0;
@@ -54,7 +54,7 @@ function create_li(id,text){
       button.addEventListener("click",()=>{
       $list_ul_todo.removeChild(button.closest("li"));
       localStorage.removeItem(button.getAttribute("id"));
-    },{capture:false,once:true});
+    });
   });
 }
 
@@ -76,6 +76,7 @@ const load_todo = (()=>{
       create_li(local_item_i.id,local_item_i.todo);
       create_id();
       list_chores.push(local_item_i);
+
     }else create_id();
   }
 })();

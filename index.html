@@ -28,16 +28,18 @@
      </ul>
    </ul>
    <div class ="settings">
-    <span class ="settings-items__counter">0/0</span>
     <div class ="settings-status">
+     <span class ="settings-items__counter">0/0</span>
      <input type="checkbox" id="status__all" class ="status__all"><label for="status__all">All</label>
       <input type="checkbox" id="status__earring" class ="status__earring"><label for="status__earring">Active</label>
       <input type="checkbox" id="status__completed" class ="status__completed"><label for="status__completed">Completed</label>
      </div>
-     <button type="button" id="status__reset" class ="status__reset">clear completed</button>
+    </div>
+    <div class ="settings-reset">
+      <button type="button" id="status__reset" class ="status__reset">clear completed</button>
+      <button type="button" id="reset" class ="reset">clear</button>
     </div>
   </section>
-  <button type="button" id="reset" class ="status__reset reset">clear</button>
   <section class ="section-bacground"></section>
   
   <template id="template--li">
