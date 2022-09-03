@@ -4,7 +4,7 @@ const main = document.querySelector(".main");
 
 const theme_button = document.querySelector("#theme-button");
 
-const local_storage = (()=>{
+const local_storage = window.addEventListener("DOMContentLoaded",()=>{
  
   const theme = localStorage.getItem("theme");
 
@@ -24,7 +24,7 @@ const local_storage = (()=>{
   theme_button.checked = true;
   
   }
-})();
+});
 
 const theme_selector = theme_button.addEventListener("click",()=>{
  if(theme_button.checked){

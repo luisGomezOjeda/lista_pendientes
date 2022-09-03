@@ -10,13 +10,14 @@ status__completed = document.getElementById("status__completed");
 status__all.checked = true;
 
 function load_counter(){
- let $li = document.querySelectorAll(".list-ul-todo-li"),
+ $li = document.querySelectorAll(".list-ul-todo-li"),
  li_input = document.querySelectorAll(".list-ul-todo-li input");
  li_input__true = Array.from(li_input).filter(input=> input.checked);
  let settings_items__counter = document.querySelector(".settings-items__counter").innerHTML = `${$li.length}/${li_input__true.length}`;
 }load_counter();
 
 function li_display(status){
+  load_counter();
  if(status == "all"){
   $li.forEach(li=> li.style.setProperty("display","flex"));
  } 
@@ -70,7 +71,7 @@ status__completed
     });
   }
   if(e.target.matches("#reset")){
-    localStorage.clear();
+    $li.forEach((li)=> localStorage.removeItem(li.querySelector("input").getAttribute("id")));
     location.reload();
   }
 });

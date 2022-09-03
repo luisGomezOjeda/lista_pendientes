@@ -4,7 +4,6 @@ let i = 0;
 const create_id = ()=> i+= 1 ; 
 
 let $list_ul_todo = document.querySelector(".list-ul-todo"),
-$list_ul_todo_li = document.querySelectorAll(".list-ul-todo li"),
 $template__li = document.getElementById("template--li").content;
 
 let $list_ul_todo_li_checked,
@@ -26,6 +25,7 @@ function create_li(id,text){
     localStorage.setItem(`${input.getAttribute("id")}`,JSON.stringify({todo:JSON.parse(localStorage.getItem(`${input.getAttribute("id")}`)).todo,status:input.checked,id:input.getAttribute("id")}));
   });
 });
+
 $list_ul_todo_li_delete = $list_ul_todo.querySelectorAll("li button");
   $list_ul_todo.addEventListener("click",(e)=>{
     if(e.target.matches(".list-ul-todo-li button")){
@@ -52,7 +52,7 @@ function create_todo(){
 
 let local_item_i;
 
-const load_todo = (()=>{
+const load_todo = window.addEventListener("DOMContentLoaded",()=>{
   let length = JSON.parse(localStorage.getItem("order"));
   while(i <= length){
     local_item_i = JSON.parse(localStorage.getItem(`value${i}`));
@@ -61,4 +61,4 @@ const load_todo = (()=>{
       create_id();
     }else create_id();
   }
-})();
+});
