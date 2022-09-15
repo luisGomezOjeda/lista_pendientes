@@ -63,15 +63,16 @@ status__completed
  }
   // clear //
   if(e.target.matches("#status__reset")){
-    $li.forEach(li=>{
-      if(li.querySelector("input").checked){
+    load_counter();
+      $li.forEach(li=>{
+        if(li.querySelector("input").checked){
         list_ul_todo.removeChild(li);
-        localStorage.removeItem(li.querySelector("input").getAttribute("id"));
-      }
-    });
+        localStorage.removeItem(li.querySelector("input").id);
+        }
+      })
   }
   if(e.target.matches("#reset")){
-    $li.forEach((li)=> localStorage.removeItem(li.querySelector("input").getAttribute("id")));
+    localStorage.clear();
     location.reload();
   }
 });
