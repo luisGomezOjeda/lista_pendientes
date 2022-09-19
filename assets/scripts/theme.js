@@ -1,37 +1,30 @@
-export {local_storage,theme_selector};
+// load theme
+export function local_storage(classMain,idButton){
 
-const main = document.querySelector(".main");
-
-const theme_button = document.querySelector("#theme-button");
-
-const local_storage = window.addEventListener("DOMContentLoaded",()=>{
- 
+  const theme_main = document.querySelector(classMain);
+  const theme_button = document.getElementById(idButton);
   const theme = localStorage.getItem("theme");
-
- if(theme === null){
-
-  main.classList.add("dark");
+  if(theme === null){
+    theme_main.classList.add("dark");
  localStorage.setItem("theme","dark");
- }else{
-  main.classList.add(theme);
- }
- if(theme === "dark"){
+ 
+}else theme_main.classList.add(theme);
 
-  theme_button.checked = false;
+ if(theme === "dark") theme_button.checked = false;
 
- }else if(theme === "light"){
+ else if(theme === "light") theme_button.checked = true;
+}
 
-  theme_button.checked = true;
-  
-  }
-});
+// theme selection
 
-const theme_selector = theme_button.addEventListener("click",()=>{
- if(theme_button.checked){
+export function theme_selector(classMain,idButton){
+  const main = document.querySelector(classMain);
+  const button = document.getElementById(idButton);
+ if(button.checked){
   main.classList.replace("dark","light"); 
   localStorage.setItem("theme","light");
  }else{
   main.classList.replace("light","dark");
   localStorage.setItem("theme","dark");
  }
-});
+}
