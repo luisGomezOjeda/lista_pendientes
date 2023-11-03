@@ -1,0 +1,44 @@
+{
+    "name": "Pendientes",
+    "short_name": "pendientes",
+    "description": "anota tus listas de pendientes",
+    "background_color": "#25273C",
+    "theme_color": "rgb(103, 103, 238)",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-MX",
+    "icons": [
+      {
+        "src": "./assets/images/icons8-lista-96(-ldpi).png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/images/icons8-lista-64(-ldpi).png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/images/icons8-lista-48(-ldpi).png",
+        "sizes": "48x48",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/images/icons8-lista-64(-ldpi).png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/images/icons8-lista-32(-ldpi).png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/images/icons8-lista-24(-ldpi).png",
+        "sizes": "24x24",
+        "type": "image/png"
+      }
+    ]
+  }
